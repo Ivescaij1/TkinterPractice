@@ -49,6 +49,8 @@ def main():
     entry_box1 = ttk.Entry(frame1)
     entry_box1.grid()
 
+    entry_box1.insert(0, 'ok')
+
     entry_box1_button = ttk.Button(frame1, text=' Check ')
     entry_box1_button['command'] = lambda: check_for_ok(entry_box1)
     entry_box1_button.grid()
@@ -85,6 +87,8 @@ def main():
 
     # ------------------------------------------------------------------
     # TODO: 8. As time permits, do other interesting GUI things!
+    # entry_box.delete(start index, end index)
+    # entry_box.insert(start index, string)
     # ------------------------------------------------------------------
 
     root.mainloop()
@@ -92,10 +96,13 @@ def main():
 
 def check_for_ok(entry_box):
     contents = entry_box.get()
+    end = len(contents)
     if contents == 'ok':
         print('Hello')
     else:
         print('goodbye')
+
+    entry_box.delete(0, end)
 
 
 def print_contents(entry_box1, entry_box2):
