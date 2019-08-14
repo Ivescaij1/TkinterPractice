@@ -102,7 +102,7 @@ def check_for_ok(entry_box):
     else:
         print('goodbye')
 
-    entry_box.delete(0, end)
+    entry_box.delete(0, 'end')
 
 
 def print_contents(entry_box1, entry_box2):
